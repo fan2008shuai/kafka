@@ -144,6 +144,7 @@ public final class Cluster {
     public static Cluster bootstrap(List<InetSocketAddress> addresses) {
         List<Node> nodes = new ArrayList<>();
         int nodeId = -1;
+        //TODO?? nodeId--
         for (InetSocketAddress address : addresses)
             nodes.add(new Node(nodeId--, address.getHostString(), address.getPort()));
         return new Cluster(null, true, nodes, new ArrayList<PartitionInfo>(0), Collections.<String>emptySet(), Collections.<String>emptySet());
